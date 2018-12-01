@@ -45,6 +45,7 @@ html,body {
 	width: 1px;
 	height:195px;
 	margin-right: 30px;
+	cursor: pointer;
 }
 .taskInfo {
 	width: 100%;
