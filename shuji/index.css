@@ -21,14 +21,14 @@ html,body {
 .taskList {
 	padding-top: 74px;
 	display: flex;
-
+	overflow: auto;
 }
 .createTask {
-	width:144px;
+	flex:0 0 144px;
 	height:195px;
 	background:rgba(144,202,249,1);
 	border-radius:4px;
-	margin: 1px;
+	margin-right: 50px;
 }
 .taskList .createTask .symbol{
 	font-size: 100px;
@@ -41,18 +41,38 @@ html,body {
 	text-align: center;
 }
 .task {
-	width:144px;
+	flex:0 0 144px;
+	width: 1px;
 	height:195px;
 	background:#FFFFFF;
 	border-radius:4px;
-	margin-left: 50px;
+	margin-right: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.taskImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 .image {
 	width: 100%;
 	height: 107px;
 }
 .text1{
+	flex: 0 0 auto;
 	font-size: 16px;
-	color: #0;
+	color: #000;
 	text-align: center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+
+}
+.time {
+	flex: 0 0 auto;
+	font-size: 12px;
+	color: #635F5F;
+	text-align: center;
+	margin-bottom: 9px;
 }

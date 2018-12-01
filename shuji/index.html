@@ -13,21 +13,23 @@
 				<div class="symbol">+</div>
 				<div class="text">新建任务</div>
 			</div>
-			<div class="task">
-				<img class="image" src="images/1.jpg">
-				<div class="text1">我的模拟任务1</div>
-			</div>
 		</div>
 	</div>
 </body>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script >
-
-	window.onload = function() {
+	
+	$(document).ready(function() {
 		for (var i = 0; i < 10; i++) {
-			var task = document.createElement("div");
-			var taskList = document.getElementsByClassName('taskList')[0];
-			taskList.appendChild(task);
+			var taskHtml = '<div class="task">' +
+				'<div class="taskImage">'+
+					'<img class="image" src="images/1.jpg">' +
+				'</div>' +
+				'<div class="text1">我的模拟任务123456789</div>' +
+				'<div class="time" >创建的时间：2018/12/1</div>'+
+			'</div>';
+			$(".taskList").append(taskHtml);
 		}
-	};
+	});
 </script>
 </html>
