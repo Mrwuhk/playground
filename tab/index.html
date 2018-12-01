@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tab</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <!-- Tab -->
+  <div>
+    <!-- 导航部分 -->
+    <nav>
+      <ul>
+        <li class="menu selectedMenu" name="followers">我的关注</li>
+        <li class="menu" name="recommend">推荐</li>
+        <li class="menu" name="navigation">导航</li>
+      </ul>
+    </nav>
+    <!-- 内容部分 -->
+    <div class="container">
+      <div class="content" id="followers">
+          <!-- <br />是分行 -->
+        这是一个tab分页，默认展示的是我的关注的内容，点击推荐，展示推荐的内容。<br />
+        导航的name属性和内容的id是对应关系。<br />
+        tab分页的实现原理就是:<br />
+        点击导航，把其他导航的内容全部隐藏，把对应导航的内容显示出来；<br />
+        导航的颜色：点击导航，所有导航的颜色去掉，给当前点的导航加上颜色。<br />
+        切换tab的时候，去看下检查里每个content元素上style的变化，jquery的show和hide方法就是去控制display:none/block;的切换<br />
+        再看下导航的li标签的class的变化
+      </div>
+      <div class="content hide" id="recommend">推荐的内容</div>
+      <div class="content hide" id="navigation">导航的内容</div>
+    </div>
+  </div>
+</body>
+<!-- 因为后面要用到query，所以要放在我们自己的代码前面加载 -->
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  /* Ready 表示dom树加载完毕 */
+  $(document).ready(function() {
+    /* 监听所有class为menu元素的点击事件，相当于先申明好，只要用户点击了导航，就会执行function */
+    $(".menu").click(function() {
+      console.log(1)
+      /* $(this)是当前你点到的class为menu元素。
+        这时候获取到导航的name属性 followers/recommend/navigation */
+      var navName = $(this).attr("name");
+      // 导航颜色变化的逻辑
+      /* 把所有menu上的selectedMenu样式去掉 */
+      $('.menu').removeClass('selectedMenu');
+      /* 点击的导航加上selectedMenu样式 */
+      $(this).addClass('selectedMenu');
+      // 以下是对内容展示的逻辑
+      /* 把所有的内容隐藏 $(".content")是选中所有class有content的元素 */
+      $(".content").hide();
+      /* 把要显示的内容显示出来 选中id是followers/recommend/navigation的元素 */
+      $("#" + navName).show();
+    });
+  });
+</script>
+</html>

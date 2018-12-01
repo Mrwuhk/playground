@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>demo1</title>
+		<link rel="stylesheet" type="text/css" href="./index.css">
+	</head>
+	<body>
+		<div>
+			<nav>
+			  <ul>
+			  	<li class="menu selectedMenu" content-id="flower">我的关注</li>
+			  	<li class="menu" name="reconative">推荐 </li>
+			  	<li class="menu" name="simi">私密</li>
+			  </ul>
+			</nav>
+			<div class="container">
+				<div class="content" id="flower">
+					JavaScript, often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. Alongside HTML and CSS, JavaScript is one of the three core technologies of the World Wide Web. Wikipedia	
+				</div>
+				<div class="content hide" id="reconative">推荐的内容</div>
+				<div class="content hide" id="simi">余珩一辈子就爱吴厚崁</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".menu").click(function(){
+				var name= $(this).attr('name');
+				$(".menu").removeClass('selectedMenu');
+				$(this).addClass('selectedMenu');
+	      $(".content").hide();
+	      $("#" + name).show();
+			});
+		});
+	</script>
+</html>

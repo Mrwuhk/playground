@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数计</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="container">
+		<div class="title">我的任务</div>
+		<div class="taskList">
+			<div class="createTask">
+				<div class="symbol">+</div>
+				<div class="text">新建任务</div>
+			</div>
+			<div class="task">
+				<img class="image" src="images/1.jpg">
+				<div class="text1">我的模拟任务1</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script >
+
+	window.onload = function() {
+		for (var i = 0; i < 10; i++) {
+			var task = document.createElement("div");
+			var taskList = document.getElementsByClassName('taskList')[0];
+			taskList.appendChild(task);
+		}
+	};
+</script>
+</html>
