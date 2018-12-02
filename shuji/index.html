@@ -22,17 +22,19 @@
 	$(document).ready(function() {
 		response.data.forEach(function(task, index, tasks){
 			var time = task.createAt;
-			var dateObject = new Date(time);
+			var dateObject = new Date(time * 1000); // 精确到毫秒
 			var year = dateObject.getFullYear();
 			var month = dateObject.getMonth();
 			var date = dateObject.getDate();
+			var createAt = year +'/'+month+'/'+ date;
+
 			var taskHtml = '<div class="task">' +
 				'<div class="taskInfo">' +
 					'<div class="taskImage">'+
 						'<img class="image" src="images/task.jpg">' +
 					'</div>' +
 					'<div class="text1">' + task.name + '</div>' +
-					'<div class="time" >创建的时间：' + year +'/'+month+'/'+ date + '</div>'+
+					'<div class="time" >创建的时间：' + createAt + '</div>'+
 				'</div>' +
 				'<div class="buttonList">' +
 					'<div class="Rectangle">' +
