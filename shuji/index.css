@@ -29,6 +29,7 @@ html,body {
 	background:rgba(144,202,249,1);
 	border-radius:4px;
 	margin-right: 50px;
+	cursor: pointer;
 }
 .taskList .createTask .symbol{
 	font-size: 100px;
