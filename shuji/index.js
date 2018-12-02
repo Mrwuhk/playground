@@ -36,13 +36,13 @@ $(document).ready(function() {
 	renderTaskList(taskList);
 	/* 监听任务的hover事件 */
 	$(".task").hover(
-			function() {
-				$(this).find(".taskInfo").hide();
-				$(this).find(".buttonList").show();
-			},
-			function() {
-				$(this).find(".buttonList").hide();
-				$(this).find(".taskInfo").show();
-			},
-		);
+		function() {
+			$(this).find(".taskInfo").hide();
+			$(this).find(".buttonList").show();
+		},
+		function() {
+			$(this).find(".buttonList").hide();
+			$(this).find(".taskInfo").show();
+		},
+	);
 });
