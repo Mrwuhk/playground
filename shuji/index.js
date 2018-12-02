@@ -1,6 +1,8 @@
-$(document).ready(function() {
-	var taskList = response.data;
-	taskList.forEach(function(task, index, tasks){
+/**
+ * 根据参数list渲染任务列表
+ */
+function renderTaskList (list) {
+	list.forEach(function(task, index, tasks){
 		var time = task.createAt;
 		var dateObject = new Date(time * 1000); // 精确到毫秒
 		var year = dateObject.getFullYear();
@@ -37,4 +39,9 @@ $(document).ready(function() {
 			},
 		);
 	});
+}
+
+$(document).ready(function() {
+	var taskList = response.data;
+	renderTaskList(taskList);
 });
