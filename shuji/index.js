@@ -28,23 +28,23 @@ function renderTaskList (list) {
 			'</div>' +
 		'</div>';
 		$(".taskList").append(taskHtml);
+		/* 监听任务的hover事件 */
+		$(".task").hover(
+			function() {
+				$(this).find(".taskInfo").hide();
+				$(this).find(".buttonList").show();
+			},
+			function() {
+				$(this).find(".buttonList").hide();
+				$(this).find(".taskInfo").show();
+			},
+		);
 	});
 }
 
 $(document).ready(function() {
 	var taskList = response.data;
 	renderTaskList(taskList);
-	/* 监听任务的hover事件 */
-	$(".task").hover(
-		function() {
-			$(this).find(".taskInfo").hide();
-			$(this).find(".buttonList").show();
-		},
-		function() {
-			$(this).find(".buttonList").hide();
-			$(this).find(".taskInfo").show();
-		},
-	);
 	/* 监听新建任务的点击事件 */
 	$('.createTask').click(function() {
 		var newTask = [{
