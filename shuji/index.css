@@ -72,7 +72,6 @@ html,body {
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
-
 }
 .time {
 	flex: 0 0 auto;
