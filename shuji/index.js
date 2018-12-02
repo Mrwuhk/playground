@@ -44,6 +44,10 @@ function renderTaskList (list) {
 			/* 向上遍历DOM树，找到class为task的元素，移除 */
 			$(this).parents('.task').remove();
 		});
+		/* 监听查看按钮点击事件，跳转到任务详情页 */
+		$(".viewTask").click(function() {
+			window.location.href = "./taskDetail/index.html";
+		});
 	});
 }
 
