@@ -28,7 +28,14 @@ function renderTaskList (list) {
 			'</div>' +
 		'</div>';
 		$(".taskList").append(taskHtml);
-		$(".task").hover(
+	});
+}
+
+$(document).ready(function() {
+	var taskList = response.data;
+	renderTaskList(taskList);
+	/* 监听任务的hover事件 */
+	$(".task").hover(
 			function() {
 				$(this).find(".taskInfo").hide();
 				$(this).find(".buttonList").show();
@@ -38,10 +45,4 @@ function renderTaskList (list) {
 				$(this).find(".taskInfo").show();
 			},
 		);
-	});
-}
-
-$(document).ready(function() {
-	var taskList = response.data;
-	renderTaskList(taskList);
 });
