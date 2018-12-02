@@ -20,7 +20,8 @@
 <script src="mockData/taskList.js"></script>
 <script >
 	$(document).ready(function() {
-		response.data.forEach(function(task, index, tasks){
+		var taskList = response.data;
+		taskList.forEach(function(task, index, tasks){
 			var time = task.createAt;
 			var dateObject = new Date(time * 1000); // 精确到毫秒
 			var year = dateObject.getFullYear();
