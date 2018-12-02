@@ -45,4 +45,13 @@ $(document).ready(function() {
 			$(this).find(".taskInfo").show();
 		},
 	);
+	/* 监听新建任务的点击事件 */
+	$('.createTask').click(function() {
+		var newTask = [{
+			createAt: Date.now(),
+			id: Date.now().toString(),
+			name: "新任务",
+		}];
+		renderTaskList(newTask);
+	});
 });
