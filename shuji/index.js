@@ -46,6 +46,8 @@ function renderTaskList (list) {
 		});
 		/* 监听查看按钮点击事件，跳转到任务详情页 */
 		$(".viewTask").click(function() {
+			/* 将点击的任务的相应信息存到缓存：sessionStorage */
+			window.sessionStorage.setItem('taskInfo', JSON.stringify(task));
 			window.location.href = "./taskDetail/index.html";
 		});
 	});
