@@ -39,6 +39,11 @@ function renderTaskList (list) {
 				$(this).find(".taskInfo").show();
 			},
 		);
+		/* 监听任务的删除按钮 */
+		$('.deleteTask').click(function() {
+			/* 向上遍历DOM树，找到class为task的元素，移除 */
+			$(this).parents('.task').remove();
+		});
 	});
 }
 
@@ -53,10 +58,5 @@ $(document).ready(function() {
 			name: "新任务",
 		}];
 		renderTaskList(newTask);
-	});
-	/* 监听任务的删除按钮 */
-	$('.deleteTask').click(function() {
-		/* 向上遍历DOM树，找到class为task的元素，移除 */
-		$(this).parents('.task').remove();
 	});
 });
