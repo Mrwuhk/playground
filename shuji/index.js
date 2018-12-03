@@ -5,10 +5,9 @@ function renderTaskList (list) {
 	list.forEach(function(task, index, tasks){
 		var time = task.createAt;
 		var dateObject = new Date(time); // 精确到毫秒
-		var year = dateObject.getFullYear();
-		var month = dateObject.getMonth() + 1; // getMonth返回一个0 到 11的整数值
-		var date = dateObject.getDate();
-		var createAt = year +'/'+month+'/'+ date;
+		/* getMonth返回一个0 到 11的整数值 */
+		var createAt = dateObject.getFullYear() + '/' +
+			(dateObject.getMonth() + 1) + '/' + dateObject.getDate();
 
 		var taskHtml = '<div class="task">' +
 			'<div class="taskInfo">' +
