@@ -45,7 +45,7 @@
 
   var guesses = document.querySelector('.guesses');
   var lastResult = document.querySelector('.lastResult');
-  var lowOrHi = document.querySelector('lowOrHi');
+  var lowOrHi = document.querySelector('.lowOrHi');
 
   var guessSubmit = document.querySelector('.guessSubmit');
   var guessField = document.querySelector('.guessField');
@@ -55,7 +55,7 @@
 
   function checkGuess() {
  
-    var userGuess = Number(guessField.value);
+    var userGuess === Number(guessField.value);
     if(guessCount === 1) {
       guesses.textContent = '上次猜的数：';
     }
