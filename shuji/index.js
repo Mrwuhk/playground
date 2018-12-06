@@ -53,8 +53,10 @@ function renderTaskList (list) {
 }
 
 $(document).ready(function() {
-	var taskList = response.data;
-	renderTaskList(taskList);
+	$.get('http://192.168.125.120:3000/task/taskList', function(res) {
+		let taskList = res.data;
+		renderTaskList(taskList);
+	});
 	/* 监听新建任务的点击事件 */
 	$('.createTask').click(function() {
 		var newTask = [{
