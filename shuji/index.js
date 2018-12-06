@@ -59,11 +59,14 @@ $(document).ready(function() {
 	});
 	/* 监听新建任务的点击事件 */
 	$('.createTask').click(function() {
-		var newTask = [{
-			createAt: Date.now(),
-			id: Date.now().toString(),
-			name: "新任务",
-		}];
-		renderTaskList(newTask);
+		let name = 'new';
+		$.post('http://192.168.125.120:3000/task/createTask',{name},function(res){
+			let newTask = [{
+				createAt: res.data.createAt,
+				id: res.data.id,
+				name,
+			}];
+			renderTaskList(newTask);
+		});
 	});
 });
