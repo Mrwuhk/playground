@@ -21,13 +21,14 @@ function renderTaskList (list) {
 				'<div class="Rectangle">' +
 					'<div class="rect">' +
 						'<div class="viewTask">查看任务</div>' +
-						'<div class="deleteTask">删除任务</div>' +
+						'<div class="deleteTask" data-id="'+ task.id +'">删除任务</div>' +
 					'</div>' +
 				'</div>' +
 			'</div>' +
 		'</div>';
 		$(".taskList").append(taskHtml);
-		/* 监听任务的hover事件 */
+		/* 取消监听、监听任务的hover事件 */
+		$(".task").unbind("mouseenter").unbind("mouseleave");
 		$(".task").hover(
 			function() {
 				$(this).find(".taskInfo").hide();
@@ -38,10 +39,20 @@ function renderTaskList (list) {
 				$(this).find(".taskInfo").show();
 			},
 		);
-		/* 监听任务的删除按钮 */
+		/* 取消监听、监听任务的删除按钮 */
+		$('.deleteTask').unbind('click');
 		$('.deleteTask').click(function() {
-			/* 向上遍历DOM树，找到class为task的元素，移除 */
-			$(this).parents('.task').remove();
+			let that = this;
+			let taskId = $(that).attr("data-id");
+			$.ajax({
+			  method: "DELETE",
+			  url: "http://192.168.125.120:3000/task",
+			  data: { id: taskId },
+			  success: function(res) {
+			  	/* 向上遍历DOM树，找到class为task的元素，移除 */
+					$(that).parents('.task').remove();
+			  },
+			});
 		});
 		/* 监听查看按钮点击事件，跳转到任务详情页 */
 		$(".viewTask").click(function() {
