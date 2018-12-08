@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>number</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	/*
+			定义number对象
+			var 变量= new Number（数字)
+
+			var 变量 = Number
+			toString 转化为指定进制
+			toFixed	 保留指定的位数
+
+	*/
+	var number = 12;
+	document.write("十进制"+number.toString()+"<br>");
+	document.write("二进制"+number.toString(2)+"<br>");
+	document.write("八进制"+number.toString(8)+"<br>");
+	document.write("十六进制"+number.toString(16)+"<br>");
+	document.write("<hr>");
+	var number2 =3.321;
+	document.write("保留两位小数"+number.toFixed(2));
+	document.write("<hr>");
+	/* 
+		var 变量名= new Arry（）
+	*/
+  var arr = new Array();
+  arr[100] = 10;
+  document.write("长度:"+arr.length+"<br>");
+
+document.write("<hr>");
+	/* 
+		带参数函数
+	
+	function Person(id,name){
+		this.id = id;
+		this.name = name;
+		this.say = function () {
+			alert(id+"是狗");
+		}
+	}	
+	var p = new Person(110,"狗剩");
+*/
+ 	var p = {
+ 		id:110,
+ 		name: "狗肾",
+ 		say: function() {
+ 			alert(this.id+"是狗子");
+ 		}
+ 	}
+	document.write("编号："+p.id +"<br>"+"姓名:"+p.name);
+	p.say();
+	document.write("<hr>");
+
+
+
+
+
+
+
+</script>
+</html>
