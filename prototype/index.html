@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prototype</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	Array.prototype.getMax = function(){
+		var  max = this[0];
+		for (var index= 0; index < this.length; index++) {
+			if (this[index]>max) {
+				max = this[index];
+			}
+		}
+		return max;
+	}
+
+	Array.prototype.searchEle =function(target){
+		for (var i = 0; i < this.length; i++) {
+			if (this[i]==target) {
+				return i;
+			}
+		}
+		return -1;
+
+	}
+	var  arr =[12,321,4535,78,423,76,43242,321121];
+	var max=arr.getMax();
+	var index= arr.searchEle(78);
+	document.write("最大值:"+max+"<hr>");
+	document.write("索引值:"+index);
+</script>
+</html>
