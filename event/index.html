@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件的事例</title>
+	
+</head>
+<body>
+		<input type="button" onclick="danji()" value="单击">
+		<input type="button" ondblclick="shuangji()" value="双击">
+		<span onmousemove="showTime()" onmouseout="hide()">当前时间</span>
+		<span id="timeSpan"></span>
+		用户名<input type="text" onfocus="showInfo()" onblur="hideInfo()"><span id= "userName"></span>
+</body>
+<script type="text/javascript">
+	function danji(){
+		alert("danji");
+	}
+	function shuangji(){
+		alert("shuangji");
+	}
+	function showTime(){
+		var  timeSpan = document.getElementById("timeSpan");
+		var date = new Date().toLocaleString();
+		timeSpan.innerHTML= date;
+	}
+	function hide(){
+		var timeSpan = document.getElementById("timeSpan");
+		timeSpan.innerHTML = "";
+	}
+	function showInfo(){
+		var timeSpan = document.getElementById("userName");
+		timeSpan.innerHTML="用户名是由6位的英文或者数字组成";
+	}
+	function hideInfo(){
+		var timeSpan = document.getElementById("userName");
+		timeSpan.innerHTML="";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
