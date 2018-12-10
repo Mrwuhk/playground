@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VUE</title>
+</head>
+<body>
+	<div class="container" id="app">
+		<div>{{message}}</div>
+		<ul>
+			<li v-for="item in list">{{item.name}}</li>
+		</ul>
+		<button v-on:click="handleMessage">点我</button>
+	</div>
+</body>
+<script src="./vue.js"></script>
+<script>
+	new Vue({
+		el: '#app',
+	  data: {
+  		list: [],
+  		message: '',
+	  },
+	  created: function() {
+	  	this.message = 'vue练习';
+	  	this.list = [{
+	  		id: 1,
+	  		name: '张三',
+	  	}, {
+	  		id: 2,
+	  		name: '李四',
+	  	}, {
+	  		id: 3,
+	  		name: '隔壁老王',
+	  	}];
+	  },
+	  mounted: function() {
+	  },
+	  methods: {
+	  	handleMessage: function() {
+	  		this.message = '列表展示';
+	  	},
+	  },
+	});
+</script>
+</html>
