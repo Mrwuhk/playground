@@ -9,7 +9,7 @@
 	<div class="container" id="app">
 		<div class="title">我的任务</div>
 		<div class="taskList">
-			<div class="createTask">
+			<div class="createTask" v-on:click="createTask">
 				<div class="symbol">+</div>
 				<div class="text">新建任务</div>
 			</div>
@@ -30,7 +30,7 @@
 					<div class="Rectangle">
 						<div class="rect">
 							<div class="viewTask">查看任务</div>
-							<div class="deleteTask">删除任务</div>
+							<div class="deleteTask" v-on:click="deleteTask(index)">删除任务</div>
 						</div>
 					</div>
 				</div>

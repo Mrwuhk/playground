@@ -40,5 +40,19 @@ new Vue({
 				...this.tasks.slice(index + 1),
 			];
 		},
+		deleteTask:function(index) {
+			this.tasks = [
+				...this.tasks.slice(0,index),
+				...this.tasks.slice(index+1),
+			];
+		},
+		createTask: function() {
+			this.tasks = this.tasks.concat([{
+				createAt: Date.now(),
+				id: Date.now().toString(),
+				isHover: false,
+				name: "新任务",
+			}]);
+		},
 	},
 })
