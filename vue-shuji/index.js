@@ -30,5 +30,15 @@ new Vue({
 				...this.tasks.slice(index + 1),
 			];
 		},
+		mouseout: function(index) {
+			this.tasks = [
+				...this.tasks.slice(0, index),
+				{
+					...this.tasks[index],
+					isHover: false,
+				},
+				...this.tasks.slice(index + 1),
+			];
+		},
 	},
 })

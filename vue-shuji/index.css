@@ -86,7 +86,6 @@ html,body {
 	height:100%;
 	background:rgba(144,202,249,1);
 	border-radius:4px;
-	display: none;
 	position: relative; 
 }
 .Rectangle{
