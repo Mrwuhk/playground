@@ -2,6 +2,11 @@ new Vue({
   el: '#app',
   data: function() {
 		return {
+			list: [{
+				name: '李四',
+			}, {
+				name: '张三',
+			}],
 			tasks: [],
 		};
 	},
