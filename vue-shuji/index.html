@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数计</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="container" id="app">
+		<div class="title">我的任务</div>
+		<div class="taskList">
+			<div class="createTask">
+				<div class="symbol">+</div>
+				<div class="text">新建任务</div>
+			</div>
+			<div class="task" v-for="(task, index) in tasks" v-on:mouseover="mouseover(index)">
+				<div class="taskInfo">
+					<div class="taskImage">
+						<img class="image" src="images/task.jpg">
+					</div>
+					<div class="text1"> {{task.name}}</div>
+						<div class="time">创建的时间： {{getDate(task)}}</div>
+				</div>
+				<div class="buttonList">
+					<div class="Rectangle">
+						<div class="rect">
+							<div class="viewTask">查看任务</div>
+							<div class="deleteTask">删除任务</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="./vue.js"></script>
+<script src="./mockData/taskList.js"></script>
+<script src="./index.js"></script>
+</html>

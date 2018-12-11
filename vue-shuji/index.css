@@ -1,0 +1,137 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+html,body {
+	width: 100%;
+	height: 100%;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	background: rgba(231,235,238,1);
+	padding: 86px 140px;
+}
+.title {
+	font-size: 100px;
+	font-weight:500;
+	color: #666;
+}
+.taskList {
+	padding-top: 74px;
+	display: flex;
+	overflow: auto;
+}
+.createTask {
+	flex:0 0 144px;
+	height:195px;
+	background:rgba(144,202,249,1);
+	border-radius:4px;
+	margin-right: 50px;
+	cursor: pointer;
+}
+.taskList .createTask .symbol{
+	font-size: 100px;
+	color: #fff;
+	text-align: center;
+}
+.taskList .createTask .text {
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+}
+.task {
+	flex:0 0 144px;
+	width: 1px;
+	height:195px;
+	margin-right: 30px;
+	cursor: pointer;
+}
+.taskInfo {
+	width: 100%;
+	height:100%;
+	background:#FFFFFF;
+	border-radius:4px;	
+	display: flex;
+	flex-direction: column;
+}
+.taskImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.image {
+	width: 100%;
+	height: 107px;
+}
+.text1{
+	flex: 0 0 auto;
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.time {
+	flex: 0 0 auto;
+	font-size: 12px;
+	color: #635F5F;
+	text-align: center;
+	margin-bottom: 9px;
+}
+.buttonList {
+	width: 100%;
+	height:100%;
+	background:rgba(144,202,249,1);
+	border-radius:4px;
+	display: none;
+	position: relative; 
+}
+.Rectangle{
+	position: absolute;
+	top: 5px;
+	width: 100%;
+	height:185px;
+	background:#fff;
+	border-radius:4px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.rect {
+	width: 82px;
+	/*height: 70px;*/
+	/*使子项目水平居中*/
+    
+}
+.viewTask {
+	font-size: 12px;
+	color: #fff;
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	background: #2196F3;
+	border-radius:2px;
+	text-align: center;
+	margin-bottom: 14px;
+}
+.deleteTask {
+	font-size: 12px;
+	color: #fff;
+	width:100%;
+	height:28px;
+	line-height: 28px;
+	background:#999999;
+	border-radius:2px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
