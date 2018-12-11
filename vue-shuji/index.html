@@ -29,7 +29,7 @@
 				<div class="buttonList" v-show="task.isHover">
 					<div class="Rectangle">
 						<div class="rect">
-							<div class="viewTask">查看任务</div>
+							<div class="viewTask" v-on:click="redirectTaskDetail(task)">查看任务</div>
 							<div class="deleteTask" v-on:click="deleteTask(index)">删除任务</div>
 						</div>
 					</div>

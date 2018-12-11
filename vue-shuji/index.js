@@ -54,5 +54,10 @@ new Vue({
 				name: "新任务",
 			}]);
 		},
+		redirectTaskDetail: function(task) {
+			/* 将点击的任务的相应信息存到缓存：sessionStorage */
+			window.sessionStorage.setItem('taskInfo', JSON.stringify(task));
+			window.location.href = "./taskDetail/index.html";
+		},
 	},
 })
