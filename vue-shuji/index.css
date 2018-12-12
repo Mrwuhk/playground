@@ -31,6 +31,9 @@ html,body {
 	margin-right: 50px;
 	cursor: pointer;
 }
+.changeColor {
+	background: #666;
+}
 .taskList .createTask .symbol{
 	font-size: 100px;
 	color: #fff;

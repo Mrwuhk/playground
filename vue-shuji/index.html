@@ -9,7 +9,7 @@
 	<div class="container" id="app">
 		<div class="title">我的任务</div>
 		<div class="taskList">
-			<div class="createTask" v-on:click="createTask">
+			<div :class="['createTask' ,{changeColor:isActive}]" v-on:click="createTask" v-on:mouseover="changeColor">
 				<div class="symbol">+</div>
 				<div class="text">新建任务</div>
 			</div>
@@ -36,7 +36,8 @@
 				</div>
 			</div>
 		</div>
-		<list v-bind:data="list"></list>
+		<list v-bind:data="list" v-bind:class="{'active': isActive}"></list>
+		<list class=""></list>
 	</div>
 </body>
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>

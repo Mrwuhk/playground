@@ -8,6 +8,7 @@ new Vue({
 				name: '张三',
 			}],
 			tasks: [],
+			isActive:false,
 		};
 	},
 	created: function() {
@@ -63,6 +64,9 @@ new Vue({
 			/* 将点击的任务的相应信息存到缓存：sessionStorage */
 			window.sessionStorage.setItem('taskInfo', JSON.stringify(task));
 			window.location.href = "./taskDetail/index.html";
+		},
+		changeColor: function(){
+			this.isActive=true;
 		},
 	},
 })
